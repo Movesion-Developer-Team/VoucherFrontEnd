@@ -31,3 +31,12 @@ label {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
+.alert{
+
+  background: black;
+
+}
+
+.alert a{
+  color:red
+}

@@ -9,6 +9,8 @@ import { UserService } from '../_services/user.service';
 export class HomeComponent implements OnInit {
   content?: string;
 
+  
+
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
@@ -16,9 +18,11 @@ export class HomeComponent implements OnInit {
       next: data => {
         this.content = data;
       },
-      // error: err => {
-      //   this.content = JSON.parse(err.error).message;
-      // }
+      error: err => {
+        this.content = JSON.parse(err.error).message;
+      }
     });
   }
+
+  
 }

@@ -1,0 +1,90 @@
+
+
+<div class="col-md-12 mt-4 mb-2">
+
+    <div class="flex">
+        <div>
+
+          <form class="example-form">
+            <mat-form-field class="example-full-width">
+            <span matPrefix> </span>
+            <input type="tel" matInput placeholder="Search" name= "search" [(ngModel)]= "term">
+            <button matSuffix mat-button><mat-icon >search</mat-icon></button>
+            </mat-form-field>
+            <br/>
+           
+            </form>
+
+          
+        </div>
+      
+
+  
+         <div>   
+
+        <button class="btn-outline-dark" id="btn1"  (click)="onClickButton()"> ADD NEW PLAYER</button>
+
+         </div>
+
+
+
+         </div>
+    <table class="table table-dark" id="table" >
+        
+        <thead>
+            <tr class="black">
+                <th> shortName</th>
+                <th> fullName</th>
+                <th>  playStoreLink</th>
+                <th> appStoreLink</th>
+                <th> linkDescription</th>
+                <th> Color</th>
+                <!-- <th> CategoryId</th> -->
+                <th> ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+         
+            <tr *ngFor="let item of listData | filter:term">
+                <td>{{item.shortName}}</td>
+                <td><span>{{item.fullName}}</span></td>
+                <td><span>{{item.playStoreLink}}</span></td>
+                <td><span>{{item.appStoreLink}}</span></td>
+                <td><span>{{item.linkDescription}}</span></td>
+                <td><span>{{item.color}}</span></td>
+                <!-- <td><span>{{item.categoryId}}</span></td> -->
+                <!-- <td>
+                    <div *ngFor="let item of items" >
+                        {{item.id}}
+        
+                    </div>
+                </td> -->
+                    
+                    
+
+               
+                
+                <div class="yeer">
+                
+                            <button type="button" id="btn2"  class="btn btn-danger" (click)="removeItem (item )"> Remove</button><br> <br>
+                            <button type="button"  id="btn2" class="btn btn-warning" (click)="onClickForm(item)"> Edit</button> <br>
+                             
+                       
+                            
+                        </div>
+            </tr>
+          
+        </tbody>
+    </table>
+    <pagination-controls class="pagination " (pageChange)="page = $event"></pagination-controls>
+
+</div>
+
+
+
+<!-- 
+<option *ngFor="let category of items " [value]="category.id">
+    {{category.id}}
+</option>  -->
+
+

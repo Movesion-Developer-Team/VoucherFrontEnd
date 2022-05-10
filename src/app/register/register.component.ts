@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../_services/auth.service';
 import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -11,7 +12,7 @@ export class RegisterComponent implements OnInit {
   form  = {
     UserName: '',
     Password: '',
-    CompanyId: ''
+    CompanyId : 0
   };
   isSuccessful = false;
   isSignUpFailed = false;
@@ -29,7 +30,8 @@ export class RegisterComponent implements OnInit {
     console.log(this.form)
     this.authService.Register(UserName,Password,CompanyId).subscribe({
       next: data => {
-        console.log(data);
+        console.log(data.companyId);
+        
         this.isSuccessful = true;
         this.isSignUpFailed = false;
         
