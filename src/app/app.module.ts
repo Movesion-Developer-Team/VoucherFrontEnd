@@ -37,13 +37,14 @@ import { TestComponent } from './test/test.component';
 import { VoucherComponent } from './voucher/voucher.component';
 import { AssociationComponent } from './association/association.component';
 
-import { Test1Component } from './test1/test1.component';
+
 import { TestplayerComponentComponent } from './testplayer/testplayer-component.component';
 import { AssociationtestComponent } from './associationtest/associationtest.component';
 import { AssociationlistComponent } from './associationlist/associationlist.component';
 import { TestcategoryComponent } from './testcategory/testcategory.component';
 
 import { MaterialExampleModule } from './material.module';
+import { EditCategoryDialogComponent } from './editcategorydialog/editcategorydialog.component';
 
 
 
@@ -73,7 +74,7 @@ import { MaterialExampleModule } from './material.module';
     VoucherComponent,
     AssociationComponent,
    
-    Test1Component,
+    EditCategoryDialogComponent,
     TestplayerComponentComponent,
     AssociationtestComponent,
     AssociationlistComponent,

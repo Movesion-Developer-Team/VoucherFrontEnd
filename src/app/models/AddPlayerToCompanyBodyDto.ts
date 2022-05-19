@@ -1,4 +1,5 @@
 
+import { CategoryBodyDto } from './CategoryBodyDto';
 import { companyBodyDto } from "./companyBodyDto";
 import { PlayerBodyDto } from "./PlayerBodyDto";
 
@@ -23,8 +24,3 @@ export interface PlayerWithCategoriesBodyDto{
 
 }
 
-export interface CategoryBodyDto{
-    id: number;
-    name:string;
-    description:string;
-}

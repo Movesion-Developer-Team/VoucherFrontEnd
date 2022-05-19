@@ -1,9 +1,13 @@
 
+export interface CategoryMainResponseDto
+{
+    message: string;
+    statusCode: number;
+    category: CategoryBodyDto | undefined;
+}
 
 export interface CategoryBodyDto {
     id: number;
-    Name: string;
-   Description: string;
-  
-  
+    name: string;
+    description: string;
 }

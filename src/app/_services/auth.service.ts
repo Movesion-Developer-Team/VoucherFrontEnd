@@ -91,12 +91,6 @@ export class AuthService {
 }
 
 
-DeleteCategory(id:number):Observable<any>{
-  
-  return this.http.delete(`${Company_Category}Delete?id=${id}`,httpOptions )
- 
- 
-}
 
   
 Deleteplayer(id:number):Observable<any>{
@@ -150,17 +144,6 @@ associate(companyId:number,playerId:number):Observable<AddPlayerToCompanyBodyDto
 }
 
 
-
-
-changecategory(id:number,  Name:string, Description:string ):Observable<CategoryBodyDto>{
-
-  return this.http.post<CategoryBodyDto>(Company_API+ 'Category/Change',{
-    id,
-    Name,
-    Description
-  
-  },httpOptions);
-}
 
 
 changeplayer(id:number,shortName:string,fullName:string,categoryId:number,playStoreLink:string,appStoreLink:string,linkDescription:string,color:string):Observable<PlayerBodyDto>{

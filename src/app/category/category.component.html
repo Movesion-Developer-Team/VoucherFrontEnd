@@ -1,55 +1,58 @@
+<div class="col-md-12 mt-4 mb-2">
+    <div class="d-flex flex-row align-items-center justify-content-between">
+        
 
-  <div class="col-md-12 mt-4 mb-2">
-    <div class="flex">
-        <div>
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                    <span matPrefix> </span>
+                    <input type="tel" matInput placeholder="Search" name="search" [(ngModel)]="term">
+                    <button matSuffix mat-button>
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </mat-form-field>
+                <br />
 
-          <form class="example-form">
-            <mat-form-field class="example-full-width">
-            <span matPrefix> </span>
-            <input type="tel" matInput placeholder="Search" name= "search" [(ngModel)]= "term">
-            <button matSuffix mat-button><mat-icon >search</mat-icon></button>
-            </mat-form-field>
-            <br/>
-          
             </form>
 
-          
-        </div>
-      
 
-  
-         <div>   
+       
+            <button  (click)="onNewCategory()" mat-flat-button color="primary"> New Category</button>
 
-        <button class="btn-outline-dark   " id="btn1" (click)="onClickButton()"> New Category</button>
-
-         </div>
-         </div>
+        
+    </div>
 
 
-      <table class="table table-dark table-striped table-hover" id="table" >
-          <thead class="thead-dark ">
-              <tr class="black">
-                  <th> Name</th>
-                  <th> Description</th>
-                  
-              </tr>
-          </thead>
-          <tbody>
-              <tr *ngFor="let item of listData| filter:term">
-                  <td><span>{{item.name}}</span></td>
-                  <td><span>{{item.description}}</span></td>
-                  
-                  <td>
-               
-                
-                        <button type="button"  id="btn2" class="hl-sort btn btn-danger" (click)="removeItem (item )">Remove</button><br> <br>
-                        <button type="button"  id="btn2" class="hl-sort btn btn-warning" (click)="onClickForm (item)">Edit</button> <br>
-                   
-                 
-                  
-              </tr>
-          </tbody>
-      </table>
-      
-      <pagination-controls class="pagination " (pageChange)="page = $event"></pagination-controls>
-  </div>
+    <table class="table table-dark table-striped table-hover" id="table">
+        <thead class="thead-dark ">
+            <tr class="black">
+                <th> Name</th>
+                <th> Description</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of listData| filter:term">
+                <td><span>{{item.name}}</span></td>
+                <td><span>{{item.description}}</span></td>
+
+                <td>
+                    <div class="d-flex align-items-center">
+
+                        <button type="button" mat-stroked-button color="basic" class="mr-1"
+                            (click)="removeItem (item )">
+                            <mat-icon>delete</mat-icon>
+                            Remove
+                        </button>
+                        <button type="button" mat-stroked-button color="warn" (click)="onEditCategory(item)">
+                            <mat-icon>edit</mat-icon>
+                            Edit
+                        </button> <br>
+                    </div>
+
+
+            </tr>
+        </tbody>
+    </table>
+
+    <pagination-controls class="pagination " (pageChange)="page = $event"></pagination-controls>
+</div>

@@ -1,13 +1,10 @@
-import { Component, NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
-import { BoardUserComponent } from './board-user/board-user.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
+
 
 import { SuperadminComponent } from './superadmin/superadmin.component';
 import { NewcompanyComponent } from './newcompany/newcompany.component';
@@ -21,10 +18,11 @@ import { TestComponent } from './test/test.component';
 import { VoucherComponent } from './voucher/voucher.component';
 import { AssociationComponent } from './association/association.component';
 
-import { Test1Component } from './test1/test1.component';
+
 import { AssociationlistComponent } from './associationlist/associationlist.component';
 
 import { TestcategoryComponent } from './testcategory/testcategory.component';
+import { EditCategoryDialogComponent } from './editcategorydialog/editcategorydialog.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -46,7 +44,7 @@ const routes: Routes = [
     {path:'addcategory', component:AddcategoryComponent},
     {path:'Voucher', component:VoucherComponent},
     {path:'test', component:TestComponent},
-    {path:'test1', component:Test1Component},
+    {path:'test1', component:EditCategoryDialogComponent},
     {path:'testcategory',component:TestcategoryComponent},
     {path:'association',component:AssociationComponent},
     {path:'associationlist',component:AssociationlistComponent},

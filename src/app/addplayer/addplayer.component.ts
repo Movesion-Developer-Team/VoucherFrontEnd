@@ -11,9 +11,10 @@ import { Observable } from 'rxjs';
 import { CreateNewCompanyBodyDto } from '../models/company';
 import { Category } from '../models/category';
 
-import{CategoryBodyDto, GetAllCategoriesResponseDto} from '../models/GetAllCategoriesResponseDto'
+import{ GetAllCategoriesResponseDto} from '../models/GetAllCategoriesResponseDto'
 import { CreateNewPlayerBodyDto } from '../models/CreateNewPlayerBodyDto';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { CategoryBodyDto } from '../models/CategoryBodyDto';
 
 @Component({
   selector: 'app-addplayer',
