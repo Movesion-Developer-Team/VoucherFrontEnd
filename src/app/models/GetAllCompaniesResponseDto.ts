@@ -3,11 +3,11 @@
 
 export interface GetAllCompaniesResponseDto{
         message: string,
-        companies: companyBodyDto[]
+        companies: CompanyBodyDto[]
 }
 
 
-export interface companyBodyDto {
+export interface CompanyBodyDto {
         id: number;
         name: string;
         address: string;

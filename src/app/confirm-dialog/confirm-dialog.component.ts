@@ -16,6 +16,7 @@ import { TestComponent } from '../test/test.component';
 import { GetAllCompaniesResponseDto } from '../models/GetAllCompaniesResponseDto';
 
 import{NewcompanyComponent} from '../newcompany/newcompany.component'
+import { CompanyService } from '../services/company.service';
 
 @Component({
   selector: 'app-confirm-dialog',
@@ -44,7 +45,11 @@ element!:companyBodyDto[];
   isLoggedIn = false;
   
   constructor(public dialogRef: MatDialogRef<ConfirmDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: ConfirmDialogModel,private dialog: MatDialog, private fb : FormBuilder ,private authService: AuthService, private http:HttpClient, private router:Router) {
+    @Inject(MAT_DIALOG_DATA) public data: ConfirmDialogModel,private dialog: MatDialog, 
+    private fb : FormBuilder ,
+    private authService: AuthService, 
+    private companyService: CompanyService,
+    private http:HttpClient, private router:Router) {
     // Update view with given values
     this.title = data.title;
     this.message = data.message;
@@ -74,7 +79,7 @@ removeItem(element:companyBodyDto) {
   
 
     
-  this.authService.DeleteCompany(element.id).pipe(
+  this.companyService.deleteCompany(element.id).pipe(
       catchError(er=> {
         alert('there is an error');
         return of (null);

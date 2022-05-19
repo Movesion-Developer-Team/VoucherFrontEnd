@@ -83,12 +83,7 @@ export class AuthService {
   // }
   //inja mikhastamm gheyre any bzaram error mide man interface basebody va company ro daram
 
- DeleteCompany(id:number):Observable<any>{
-  
-  return this.http.delete(`${Company_Delete}Delete?id=${id}`,httpOptions )
- 
- 
-}
+
 
 
 
